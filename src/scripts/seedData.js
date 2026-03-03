@@ -21,9 +21,9 @@ const seedDatabase = async () => {
     // Contact Info
     await setDoc(doc(db, 'siteContent', 'contact'), {
       address: 'Changloon',
-      phone: '+60 12-345 6789',
-      whatsappLink: 'https://wa.me/60123456789',
-      email: 'hello@brainy-edu.com',
+      phone: '+60 13-668 9108',
+      whatsappLink: 'https://wa.me/60136689108',
+      email: '',
       facebookLink: 'https://facebook.com/brainyed',
       instagramLink: 'https://instagram.com/brainyedu',
       linkedinLink: 'https://linkedin.com/company/brainy-edu'

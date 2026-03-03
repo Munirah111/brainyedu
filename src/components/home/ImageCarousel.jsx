@@ -65,7 +65,7 @@ const ImageCarousel = ({ images = [] }) => {
                 loading="lazy"
                 onError={(e) => {
                   e.target.src =
-                    'https://via.placeholder.com/400x500?text=Loading...';
+                    'https://placehold.co/400x500?text=Loading';
                 }}
               />
             </div>
