@@ -565,7 +565,7 @@ const seedDatabase = async () => {
     // Highlight Video URL
     await setDoc(doc(db, 'media', 'highlightVideo'), {
       title: 'One-to-One Classes Video',
-      videoUrl: 'https://example.com/highlight-video.mp4',
+      videoUrl: 'https://drive.google.com/file/d/1TmmUfEKlHYrX1BgQEohlUzny_nayOWL8/preview',
       description: 'Engaging video about our personalized learning approach',
       type: 'highlight'
     });

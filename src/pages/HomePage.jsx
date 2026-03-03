@@ -233,17 +233,30 @@ const HomePage = () => {
 
               {/* Video Section */}
               <div className="highlight-video-box">
-                <video 
-                  className="highlight-video" 
-                  autoPlay 
-                  muted 
-                  loop
-                  playsInline
-                  controls={false}
-                >
-                  <source src={highlightVideo?.videoUrl || 'https://example.com/highlight-video.mp4'} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
+                {highlightVideo?.videoUrl?.includes('drive.google.com') ? (
+                  <iframe
+                    className="highlight-video"
+                    src={highlightVideo.videoUrl}
+                    width="100%"
+                    height="100%"
+                    frameBorder="0"
+                    allow="autoplay"
+                    allowFullScreen
+                    title="Highlight Video"
+                  ></iframe>
+                ) : (
+                  <video 
+                    className="highlight-video" 
+                    autoPlay 
+                    muted 
+                    loop
+                    playsInline
+                    controls={false}
+                  >
+                    <source src={highlightVideo?.videoUrl || 'https://example.com/highlight-video.mp4'} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                )}
               </div>
 
               {/* Class Images Carousel */}
