@@ -72,9 +72,15 @@ const Navbar = () => {
               </Link>
             )
           ))}
-          <Link to="/contact" className="btn btn-primary nav-cta" onClick={() => setIsOpen(false)}>
+          <a 
+            href="https://wa.me/60136689108" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="btn btn-primary nav-cta" 
+            onClick={() => setIsOpen(false)}
+          >
             Enroll Now
-          </Link>
+          </a>
         </div>
       </div>
     </nav>
