@@ -1,0 +1,246 @@
+/* Image Carousel Styles */
+
+.image-carousel {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  aspect-ratio: 4 / 5;
+  margin: 0 auto;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(135deg, #0A1929 0%, #1E2A3A 100%);
+}
+
+/* Image Wrapper */
+.carousel-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.carousel-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-image.active {
+  opacity: 1;
+  z-index: 10;
+}
+
+.carousel-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  background: rgba(15, 30, 45, 0.3);
+}
+
+/* Overlay Gradient */
+.carousel-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(to top, rgba(10, 25, 41, 0.8), transparent);
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* Navigation Controls */
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 219, 88, 0.9);
+  color: #0A1929;
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  z-index: 20;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 219, 88, 0.3);
+}
+
+.carousel-control:hover {
+  background: var(--mustard);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 8px 25px rgba(255, 219, 88, 0.5);
+}
+
+.carousel-control-prev {
+  left: 15px;
+}
+
+.carousel-control-next {
+  right: 15px;
+}
+
+/* Dots Indicator */
+.carousel-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 20;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+  margin: 0;
+}
+
+.dot:hover {
+  background: rgba(255, 255, 255, 0.8);
+  transform: scale(1.2);
+}
+
+.dot.active {
+  background: #FFDB58;
+  border-color: white;
+  box-shadow: 0 0 15px rgba(255, 219, 88, 0.6);
+  transform: scale(1.3);
+}
+
+/* Decorative Elements */
+.carousel-decoration {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.decoration-circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 219, 88, 0.2);
+  z-index: 0;
+}
+
+.decoration-circle-1 {
+  width: 80px;
+  height: 80px;
+  top: -30px;
+  right: -30px;
+  animation: float 6s ease-in-out infinite;
+}
+
+.decoration-circle-2 {
+  width: 60px;
+  height: 60px;
+  bottom: -20px;
+  left: -20px;
+  animation: float 5s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Loading state */
+.carousel-image img {
+  animation: fadeInImage 0.6s ease-out;
+}
+
+@keyframes fadeInImage {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .image-carousel {
+    max-width: 380px;
+  }
+}
+
+@media (max-width: 768px) {
+  .image-carousel {
+    max-width: 100%;
+    aspect-ratio: auto;
+    height: 350px;
+    margin-top: 2rem;
+  }
+
+  .carousel-control {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .carousel-control-prev {
+    left: 10px;
+  }
+
+  .carousel-control-next {
+    right: 10px;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .carousel-dots {
+    bottom: 15px;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .image-carousel {
+    height: 280px;
+  }
+
+  .carousel-control {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+
+  .carousel-dots {
+    bottom: 10px;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+  }
+}

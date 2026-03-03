@@ -1,0 +1,325 @@
+/* Country Flags Map Container */
+.country-flags-map-container {
+  width: 100%;
+  background: linear-gradient(135deg, rgba(255, 251, 245, 0.8) 0%, rgba(245, 241, 232, 0.8) 100%);
+  border-radius: 20px;
+  padding: 1rem;
+  margin: 0.75rem 0;
+  box-shadow: 0 5px 20px rgba(10, 25, 41, 0.1);
+}
+
+/* Map Header */
+.map-header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.map-header h3 {
+  font-size: 1.2rem;
+  color: #0A1929;
+  margin: 0 0 0.2rem;
+  font-weight: 700;
+}
+
+.map-header p {
+  color: #666;
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+/* World Map Wrapper */
+.world-map-wrapper {
+  position: relative;
+  width: 100%;
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border: 2px solid rgba(228, 150, 0, 0.1);
+}
+
+.world-map-wrapper::before {
+  content: '';
+  display: block;
+  padding-bottom: 35%;
+  width: 100%;
+}
+
+/* SVG Map */
+.world-map-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.continents {
+  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.05));
+}
+
+/* Flags Container */
+.flags-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+/* Flag Pin */
+.flag-pin {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  z-index: 10;
+  --flag-size: 1.5;
+  transition: all 0.3s ease;
+}
+
+.flag-emoji {
+  font-size: calc(1.5rem * var(--flag-size));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  transition: all 0.3s ease;
+  animation: flagBounce 2s ease-in-out infinite;
+}
+
+@keyframes flagBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.flag-pin:hover .flag-emoji {
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+  animation: none;
+}
+
+/* Ping Animation */
+.flag-ping {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(3rem * var(--flag-size));
+  height: calc(3rem * var(--flag-size));
+  border-radius: 50%;
+  background: rgba(228, 150, 0, 0.2);
+  border: 2px solid rgba(228, 150, 0, 0.5);
+  animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes ping {
+  75%, 100% {
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 0;
+  }
+}
+
+.flag-pin.active .flag-ping {
+  animation: none;
+}
+
+/* Tooltip */
+.flag-tooltip {
+  position: absolute;
+  bottom: calc(100% + 0.8rem);
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  border-radius: 12px;
+  padding: 0.75rem;
+  max-width: 160px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  z-index: 20;
+  pointer-events: none;
+  animation: tooltipFadeIn 0.3s ease;
+  border: 2px solid rgba(228, 150, 0, 0.3);
+}
+
+@keyframes tooltipFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* Tooltip Arrow */
+.flag-tooltip::after {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 12px;
+  background: white;
+  border: 2px solid rgba(228, 150, 0, 0.3);
+  border-top: none;
+  border-left: none;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.tooltip-flag {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 0.4rem;
+}
+
+.tooltip-content {
+  text-align: center;
+}
+
+.tooltip-content strong {
+  display: block;
+  color: #0A1929;
+  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
+}
+
+.tooltip-content p {
+  color: #666;
+  font-size: 0.8rem;
+  margin: 0.2rem 0;
+}
+
+.tooltip-percentage {
+  display: inline-block;
+  background: linear-gradient(135deg, #e49600, #ffc70e);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+/* Map Stats */
+.map-stats {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 2px solid rgba(228, 150, 0, 0.2);
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #0A1929;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.stat-item i {
+  font-size: 1rem;
+  color: #e49600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .country-flags-map-container {
+    padding: 1.5rem;
+  }
+
+  .map-header h3 {
+    font-size: 1.5rem;
+  }
+
+  .map-stats {
+    gap: 1rem;
+  }
+
+  .stat-item {
+    flex: 1;
+    justify-content: center;
+    font-size: 0.9rem;
+  }
+
+  .stat-item i {
+    font-size: 1.2rem;
+  }
+
+  .flag-tooltip {
+    padding: 0.75rem;
+    max-width: 150px;
+  }
+
+  .tooltip-flag {
+    font-size: 2rem;
+  }
+
+  .tooltip-content strong {
+    font-size: 0.95rem;
+  }
+
+  .tooltip-content p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .country-flags-map-container {
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+
+  .map-header h3 {
+    font-size: 1.3rem;
+  }
+
+  .map-header p {
+    font-size: 0.9rem;
+  }
+
+  .map-stats {
+    gap: 0.5rem;
+    flex-direction: column;
+    border-top: none;
+    padding-top: 1rem;
+    margin-top: 1rem;
+  }
+
+  .stat-item {
+    gap: 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .flag-tooltip {
+    padding: 0.6rem;
+    max-width: 130px;
+  }
+
+  .tooltip-flag {
+    font-size: 1.8rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .tooltip-content strong {
+    font-size: 0.9rem;
+  }
+
+  .tooltip-content p {
+    font-size: 0.8rem;
+  }
+
+  .tooltip-percentage {
+    padding: 0.2rem 0.6rem;
+    font-size: 0.75rem;
+  }
+}

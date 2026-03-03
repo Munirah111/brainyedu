@@ -1,0 +1,231 @@
+/* Floating Help Button */
+.help-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e49600 0%, #ffc70e 100%);
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(228, 150, 0, 0.4);
+  transition: all 0.3s ease;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.help-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(228, 150, 0, 0.6);
+}
+
+.help-button i {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Modal Overlay */
+.help-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Modal Box */
+.help-modal {
+  background: white;
+  border-radius: 20px;
+  padding: 2.5rem;
+  max-width: 400px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Close Button */
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: #666;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+  background: rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+/* Modal Header */
+.modal-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.modal-header i {
+  font-size: 3rem;
+  color: #e49600;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.modal-header h3 {
+  color: #0A1929;
+  font-size: 1.8rem;
+  margin: 0;
+  font-weight: 700;
+}
+
+/* Modal Content */
+.modal-content {
+  text-align: center;
+}
+
+.modal-content p {
+  color: #666;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* WhatsApp Button */
+.whatsapp-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 1rem 2rem;
+  background: #25d366;
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-button i {
+  font-size: 1.5rem;
+}
+
+.whatsapp-button:hover {
+  background: #128c7e;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+/* Contact Info in Modal */
+.contact-info-modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: rgba(228, 150, 0, 0.1);
+  border-radius: 8px;
+  color: #0A1929;
+  font-weight: 600;
+}
+
+.contact-info-modal i {
+  color: #e49600;
+  font-size: 1.1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .help-button {
+    width: 55px;
+    height: 55px;
+    font-size: 1.6rem;
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+
+  .help-modal {
+    padding: 2rem;
+    max-width: 350px;
+  }
+
+  .modal-header h3 {
+    font-size: 1.5rem;
+  }
+
+  .whatsapp-button {
+    padding: 0.9rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .help-button {
+    width: 50px;
+    height: 50px;
+    font-size: 1.4rem;
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  .help-modal {
+    padding: 1.5rem;
+  }
+
+  .modal-header i {
+    font-size: 2.5rem;
+  }
+}

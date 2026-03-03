@@ -1,0 +1,112 @@
+.footer {
+  background: var(--navy-dark);
+  padding: 2rem 0 1rem;
+  position: relative;
+  border-top: 1px solid rgba(227, 160, 8, 0.2);
+}
+
+.footer-content {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.footer-main {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  font-size: 2.5rem;
+  font-weight: 800;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo .logo-text {
+  color: #ffffff;
+}
+
+.footer-logo .logo-network {
+  font-size: 1.2rem;
+  font-weight: 500;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.powered-by {
+  margin-bottom: 0rem;
+}
+
+.powered-label {
+  display: block;
+  color: var(--text-gray);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.platform-logos {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.platform-logo {
+  height: 40px;
+  object-fit: contain;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.platform-logo:hover {
+  transform: scale(1.05);
+}
+
+.leon-logo {
+  height: 35px;
+  max-width: 120px;
+}
+
+.footer-bottom {
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  color: var(--text-gray);
+  font-size: 0.9rem;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 2rem 0 1rem;
+  }
+  
+  .footer-logo {
+    font-size: 2rem;
+  }
+  
+  .platform-badges {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .platform-badge {
+    width: 100%;
+    max-width: 250px;
+    justify-content: center;
+  }
+}

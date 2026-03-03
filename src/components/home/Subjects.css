@@ -1,0 +1,116 @@
+.subjects-wrapper {
+  margin-top: 3rem;
+}
+
+.subjects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.subject-card {
+  background: var(--navy-medium);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all var(--transition-normal);
+  animation: fadeInUp 0.8s ease forwards;
+  opacity: 0;
+}
+
+.subject-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--mustard);
+}
+
+.subject-image {
+  height: 150px;
+  position: relative;
+  overflow: hidden;
+}
+
+.subject-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+}
+
+.subject-card:hover .subject-image img {
+  transform: scale(1.1);
+}
+
+.subject-icon-wrapper {
+  position: absolute;
+  bottom: -25px;
+  left: 1.5rem;
+  width: 50px;
+  height: 50px;
+  background: var(--dark-green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--mustard);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+}
+
+.subject-card:hover .subject-icon-wrapper {
+  transform: rotate(360deg);
+  background: var(--maroon);
+}
+
+.subject-icon-wrapper img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.subject-content {
+  padding: 2rem 1.5rem 1.5rem;
+}
+
+.subject-content h4 {
+  color: var(--mustard);
+  margin-bottom: 0.25rem;
+  font-size: 1.2rem;
+}
+
+.subject-level {
+  background: linear-gradient(135deg, #ff6b6b, #ff4757);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.subject-description {
+  color: var(--text-gray);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.subject-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.topic-tag {
+  background: rgba(255, 219, 88, 0.1);
+  color: var(--mustard);
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  border: 1px solid var(--mustard);
+}
+
+@media (max-width: 768px) {
+  .subjects-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,91 @@
+.activities-wrapper {
+  margin-top: 3rem;
+}
+
+.activities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.activity-card {
+  background: var(--navy-medium);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all var(--transition-normal);
+  animation: fadeInUp 0.8s ease forwards;
+  opacity: 0;
+}
+
+.activity-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--mustard);
+}
+
+.activity-image {
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+}
+
+.activity-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+}
+
+.activity-card:hover .activity-image img {
+  transform: scale(1.1);
+}
+
+.activity-date {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--navy-dark);
+  color: var(--mustard);
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  border: 1px solid var(--mustard);
+  backdrop-filter: blur(5px);
+}
+
+.activity-date i {
+  margin-right: 0.5rem;
+}
+
+.activity-content {
+  padding: 1.5rem;
+}
+
+.activity-content h4 {
+  color: var(--mustard);
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.activity-content p {
+  color: var(--text-gray);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.activity-meta {
+  color: var(--text-gray);
+  font-size: 0.9rem;
+}
+
+.activity-meta i {
+  color: var(--mustard);
+  margin-right: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .activities-grid {
+    grid-template-columns: 1fr;
+  }
+}
