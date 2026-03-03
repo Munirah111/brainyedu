@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { firestoreService } from '../services/firestoreService.js';
 
 export const useFirestore = (collectionName) => {
@@ -6,11 +6,7 @@ export const useFirestore = (collectionName) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    fetchData();
-  }, [collectionName]);
-
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     try {
       setLoading(true);
       const result = await firestoreService.getAll(collectionName);
@@ -21,7 +17,11 @@ export const useFirestore = (collectionName) => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [collectionName]);
+
+  useEffect(() => {
+    fetchData();
+  }, [fetchData]);
 
   return { data, loading, error, refetch: fetchData };
 };
@@ -31,11 +31,7 @@ export const useStaticDoc = (collectionName, docId) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    fetchDoc();
-  }, [collectionName, docId]);
-
-  const fetchDoc = async () => {
+  const fetchDoc = useCallback(async () => {
     try {
       setLoading(true);
       const result = await firestoreService.getStaticDoc(collectionName, docId);
@@ -46,7 +42,11 @@ export const useStaticDoc = (collectionName, docId) => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [collectionName, docId]);
+
+  useEffect(() => {
+    fetchDoc();
+  }, [fetchDoc]);
 
   return { data, loading, error };
 };
