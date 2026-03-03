@@ -23,18 +23,6 @@ const Navbar = () => {
     { path: '/#contact', label: 'Contact' },
   ];
 
-  const handleNavClick = (e, path) => {
-    if (path.startsWith('/#')) {
-      e.preventDefault();
-      const id = path.substring(2);
-      const element = document.getElementById(id);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-      setIsOpen(false);
-    }
-  };
-
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="container navbar-container">
