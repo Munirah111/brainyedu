@@ -55,20 +55,34 @@ const Navbar = () => {
 
         <div className={`navbar-menu ${isOpen ? 'active' : ''}`}>
           {navLinks.map(link => (
-            <Link
-              key={link.path}
-              to={link.path}
-              className={`navbar-link ${location.pathname === link.path ? 'active' : ''}`}
-              onClick={(e) => {
-                handleNavClick(e, link.path);
-                if (!link.path.startsWith('/#')) {
+            link.path.startsWith('/#') ? (
+              <a
+                key={link.path}
+                href={link.path}
+                className="navbar-link"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const id = link.path.substring(2);
+                  const element = document.getElementById(id);
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
                   setIsOpen(false);
-                }
-              }}
-            >
-              {link.label}
-              {link.path === '/packages' && <span className="nav-badge">New</span>}
-            </Link>
+                }}
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link
+                key={link.path}
+                to={link.path}
+                className={`navbar-link ${location.pathname === link.path ? 'active' : ''}`}
+                onClick={() => setIsOpen(false)}
+              >
+                {link.label}
+                {link.path === '/packages' && <span className="nav-badge">New</span>}
+              </Link>
+            )
           ))}
           <Link to="/contact" className="btn btn-primary nav-cta" onClick={() => setIsOpen(false)}>
             Enroll Now

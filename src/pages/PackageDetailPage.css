@@ -12,7 +12,7 @@
 .back-btn {
   background: transparent;
   border: 1px solid var(--navy-light);
-  color: var(--text-gray);
+  color: #eff2f5;
   padding: 0.75rem 1.5rem;
   border-radius: 30px;
   cursor: pointer;
@@ -25,7 +25,7 @@
 
 .back-btn:hover {
   border-color: var(--mustard);
-  color: var(--text-light);
+  color: #eff2f5;
   transform: translateX(-5px);
 }
 
@@ -81,13 +81,18 @@
 .package-title {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: var(--text-light);
+  background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-dark) 70%, var(--mustard) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+  letter-spacing: -0.5px;
 }
 
 .package-price-large {
   font-size: 3rem;
   font-weight: 800;
-  color: var(--mustard);
+  color: #1e2a3a;
 }
 
 .package-price-large span {
@@ -128,7 +133,7 @@
 }
 
 .package-description-section p {
-  color: var(--text-gray);
+  color: #979a9f;
   line-height: 1.8;
   font-size: 1.1rem;
 }
@@ -163,12 +168,12 @@
 .spec-value {
   font-size: 1.8rem;
   font-weight: 700;
-  color: var(--text-light);
+  color: #dcdce0;
   line-height: 1.2;
 }
 
 .spec-label {
-  color: var(--text-gray);
+  color: #979a9f;
   font-size: 0.9rem;
 }
 
@@ -197,20 +202,20 @@
 }
 
 .features-list i {
-  color: var(--dark-green);
+  color: #e49600;
   font-size: 1.5rem;
   flex-shrink: 0;
 }
 
 .features-list strong {
   display: block;
-  color: var(--text-light);
+  color: #dcdce0;
   margin-bottom: 0.25rem;
   font-size: 1.1rem;
 }
 
 .features-list span {
-  color: var(--text-gray);
+  color: #979a9f;
   font-size: 0.9rem;
 }
 
@@ -236,18 +241,18 @@
 .sidebar-price {
   font-size: 2rem;
   font-weight: 700;
-  color: var(--mustard);
+  color: #1e2a3a;
   margin-bottom: 0.5rem;
 }
 
 .sidebar-price span {
   font-size: 0.9rem;
-  color: var(--text-gray);
+  color: #979a9f;
   font-weight: normal;
 }
 
 .sidebar-note {
-  color: var(--text-gray);
+  color: #979a9f;
   font-size: 0.9rem;
   margin-bottom: 1.5rem;
 }
@@ -280,13 +285,13 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  color: var(--text-gray);
+  color: var(--text-light);
   margin-bottom: 0.75rem;
   font-size: 0.95rem;
 }
 
 .sidebar-feature i {
-  color: var(--mustard);
+  color: #171716;
 }
 
 /* Quick Info */
@@ -296,7 +301,7 @@
 }
 
 .quick-info-card h4 {
-  color: var(--mustard);
+  color: #e49600;
   margin-bottom: 1rem;
   font-size: 1.2rem;
 }
@@ -318,12 +323,12 @@
 }
 
 .quick-info-card i {
-  color: var(--mustard);
+  color: #242424;
   width: 20px;
 }
 
 .quick-info-card span {
-  color: var(--text-gray);
+  color: #242424;
 }
 
 /* Related Packages */
@@ -372,7 +377,7 @@
 }
 
 .related-content h4 {
-  color: var(--text-light);
+  color: #d1d1d1;
   margin-bottom: 0.25rem;
   font-size: 1rem;
 }

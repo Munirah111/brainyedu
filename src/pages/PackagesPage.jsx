@@ -210,10 +210,15 @@ const PackagesPage = () => {
           <div className="cta-content">
             <h2>Not sure which package to choose?</h2>
             <p>Book a free consultation with our education experts</p>
-            <Link to="/contact" className="btn btn-primary cta-button">
+            <a 
+              href="https://wa.me/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="btn btn-primary cta-button"
+            >
               Schedule Consultation
               <i className="fas fa-calendar-check"></i>
-            </Link>
+            </a>
           </div>
         </div>
       </div>

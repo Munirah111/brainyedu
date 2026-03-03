@@ -87,8 +87,9 @@
 }
 
 .filter-btn.active {
-  background: var(--dark-green);
-  border-color: var(--dark-green);
+  background: #ffffff;
+  border-color: #000000;
+  border: 0.5px solid #000000;
   color: var(--text-light);
 }
 
@@ -214,7 +215,7 @@
 }
 
 .package-description {
-  color: var(--text-gray);
+  color: #979a9f;
   margin-bottom: 1.5rem;
   line-height: 1.6;
   font-size: 0.95rem;
@@ -237,7 +238,7 @@
 }
 
 .spec-item i {
-  color: var(--mustard);
+  color: #8b8b8b;
   font-size: 1.2rem;
 }
 
@@ -247,13 +248,13 @@
 }
 
 .spec-item strong {
-  color: var(--text-light);
+  color: #a9a9a9;
   font-size: 1.1rem;
   line-height: 1.2;
 }
 
 .spec-item span {
-  color: var(--text-gray);
+  color: #979a9f;
   font-size: 0.8rem;
 }
 
@@ -262,7 +263,7 @@
 }
 
 .feature {
-  color: var(--text-gray);
+  color: #abafb3;
   margin-bottom: 0.5rem;
   display: flex;
   align-items: center;
@@ -271,7 +272,7 @@
 }
 
 .feature i {
-  color: var(--dark-green);
+  color: #e49600;
 }
 
 .package-btn {
@@ -280,10 +281,13 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  color: white;
+  font-weight: 600;
 }
 
 .package-btn i {
   transition: transform var(--transition-normal);
+  color: white;
 }
 
 .package-btn:hover i {

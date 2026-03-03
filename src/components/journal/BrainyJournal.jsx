@@ -15,10 +15,15 @@ const BrainyJournal = () => {
     setIsModalOpen(false);
   };
 
-  // Get unique months for filtering
-  const months = journals 
-    ? ['all', ...new Set(journals.map(j => j.month))]
-    : ['all'];
+  // Get unique months for filtering - ordered January to December
+  const monthOrder = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  const getOrderedMonths = () => {
+    if (!journals) return ['all'];
+    const uniqueMonths = [...new Set(journals.map(j => j.month))];
+    const sorted = uniqueMonths.sort((a, b) => monthOrder.indexOf(a) - monthOrder.indexOf(b));
+    return ['all', ...sorted];
+  };
+  const months = getOrderedMonths();
 
   // Filter journals by selected month
   const filteredJournals = selectedMonth === 'all' 
